@@ -1,0 +1,35 @@
+<div>
+    <div><h1>Collaborator</h1></div>
+    <table class='table'>
+    <tbody>
+        <tr>
+            <td><h4>Profile</h4></td>
+            <td><h4>Nom</h4></td>
+            <td><h4>Role</h4></td>
+          </tr>
+      <tr *ngFor="let cont of contributor;">
+        <td><img src={{cont.author.avatar_url}} class=fdp></td>
+        <td><a href="{{cont.author.html_url}}">{{cont.author.login}}</a></td>
+        <td>{{cont.author.type}}</td>
+      </tr>
+    </tbody>
+  </table>
+<div><h1>Language</h1></div>
+<table class='table'>
+    <tbody>
+        <tr>
+            <td> 
+                <div *ngFor="let type of repoContrType"  style="margin-top:5px;">
+                    <strong>{{type}}</strong>
+                </div>               
+            </td>
+            <td>
+                <div *ngFor="let value of repoContrValue"  style="margin-top:5px;">
+                    {{value}} Bytes
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

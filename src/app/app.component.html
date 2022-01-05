@@ -1,0 +1,16 @@
+<div id="searchBar">
+<input type="text" [(ngModel)]="userName" placeholder="identifiant"/>
+<button (click)=getRepos()>Search</button>
+</div>
+<div>
+<table class='table'>
+  <tbody>
+    <tr *ngFor="let repo of repos;">
+      <td>{{repo.id}}</td>
+      <td><a href="/repoStat/{{userName}}/{{repo.name}}">{{repo.name}}</a></td>
+      <td>Lien du repo: <a href="{{repo.html_url}}">{{repo.html_url}}</a></td>
+    </tr>
+  </tbody>
+</table> 
+</div>
+<router-outlet></router-outlet>
